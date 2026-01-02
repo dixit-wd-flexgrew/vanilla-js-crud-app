@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div id="cart-alert" class="cart-alert">✅ Product added to cart</div>
+
+    <nav class="navbar bg-body-tertiary">
+      <a class="logo" href="../index.html">DXT List</a>
+      <button type="button" class="login-btn">Login</button>
+      <div class="after-login">
+        <ul
+          class="navigation d-flex justify-content-center align-items-center list-unstyled mb-0"
+        >
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">UserList</a>
+          </li>
+          <li class="nav-item">
+            <a href="product.html" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="cart.html" class="nav-link">
+              <i class="fa-solid fa-cart-shopping" id="cartValue">0</i>
+            </a>
+          </li>
+        </ul>
+        <div class="dropdown account">
+          <button
+            class="user btn dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            user01985
+          </button>
+          <ul
+            class="dropdown-menu logout-btn"
+            aria-labelledby="dropdownMenuButton1"
+          >
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="product-section mt-5">
+      <div class="product-option-cont d-flex justify-content-between mb-5">
+        <div class="posting-update-cont">
+          <form class="product-cont d-flex gap-2 align-items-center">
+            <div style="height: 100px">
+              <label for="pname" class="form-label">Product Name:</label>
+              <input
+                class="form-control"
+                type="text"
+                id="pname"
+                name="pname"
+                autocomplete="on"
+                placeholder="Ex: Smart Watch"
+                required
+              />
+              <div class="error text-danger" id="product-name-error"></div>
+            </div>
+            <div style="height: 100px">
+              <label for="pprice" class="form-label">Product Price:</label>
+              <input
+                class="form-control"
+                type="text"
+                id="pprice"
+                name="pprice"
+                autocomplete="on"
+                placeholder="Ex: 19.67"
+                required
+              />
+              <div class="error text-danger" id="product-price-error"></div>
+            </div>
+            <button type="submit" class="product-sbmt-btn">Submit</button>
+          </form>
+        </div>
+        <div class="search-filter-cont">
+          <!-- search -->
+          <form class="d-flex ml-auto search-cont mb-3" role="search">
+            <div class="me-2">
+              <input
+                class="form-control"
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Search"
+                aria-label="Search"
+                autocomplete="additional-name"
+              />
+              <div class="error-search text-danger" id="search-error"></div>
+            </div>
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <!-- filter -->
+          <div class="d-flex gap-2">
+            <select class="form-select filter-cont" id="product-filter" name="product-filter" aria-label="Default select example">
+              <option value="Default" selected>Select Product Category</option>
+              <option value="beauty">Beauty</option>
+              <option value="fragrances">Fragrances</option>
+              <option value="furniture">Furniture</option>
+              <option value="groceries">Groceries</option>
+              <option value="home-decoration">Home-Decoration</option>
+              <option value="kitchen-accessories">Kitchen-Accessories</option>
+              <option value="laptops">Laptops</option>
+              <option value="mens-shirts">Mens-Shirts</option>
+              <option value="mens-shoes">Mens-Shoes</option>
+              <option value="mens-watches">Mens-Watches</option>
+              <option value="mobile-accessories">Mobile-Accessories</option>
+              <option value="motorcycle">Motorcycle</option>
+              <option value="skin-care">Skin-Care</option>
+              <option value="smartphones">Smartphones</option>
+              <option value="sports-accessories">Sports-Accessories</option>
+              <option value="sunglasses">Sunglasses</option>
+              <option value="tablets">Tablets</option>
+              <option value="tops">Tops</option>
+              <option value="vehicle">Vehicle</option>
+              <option value="womens-bags">Womens-Bags</option>
+              <option value="womens-dresses">Womens-Dresses</option>
+              <option value="womens-jewellery">Womens-Jewellery</option>
+              <option value="womens-shoes">Womens-Shoes</option>
+              <option value="womens-shoes">Womens-Shoes</option>
+              <option value="womens-watches">Womens-Watches</option>
+            </select>
+            <button type="button" class="btn filter-clear text-danger">
+              Clear <span class="btn btn-close"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <h2 class="product-head">Products List</h2>
+      <div class="product-container container-fluid p-0">
+        <div class="row m-0 product-card-row"></div>
+      </div>
+    </div>
+
+    <section class="product-not-found">
+      <h2>Product Not Found 🛒</h2>
+      <p>No product matches your search.</p>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

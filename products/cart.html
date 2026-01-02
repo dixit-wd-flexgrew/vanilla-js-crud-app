@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+    <div id="cart-alert" class="cart-alert">✅ Product successfully edit in cart</div>
+
+    <nav class="navbar bg-body-tertiary">
+      <a class="logo" href="../index.html">DXT List</a>
+      <button type="button" class="login-btn">Login</button>
+      <div class="after-login">
+        <ul class="navigation d-flex justify-content-center align-items-center list-unstyled mb-0">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">UserList</a>
+          </li>
+          <li class="nav-item">
+            <a href="product.html" class="nav-link">Products</a>
+          </li>
+          <li class="nav-item">
+            <a href="cart.html" class="nav-link">
+              <i class="fa-solid fa-cart-shopping" id="cartValue">0</i>
+            </a>
+          </li>
+        </ul>
+        <div class="dropdown account">
+          <button class="user btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">user01985</button>
+          <ul class="dropdown-menu logout-btn" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item" href="#">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="cart-section mt-5">
+      <h2 class="cart-head">Products List</h2>
+      <div class="container-fluid p-0">
+        <div class="row m-0 cart-card-row"></div>
+      </div>
+    </div>
+
+    <div class="empty-cart-section justify-content-center align-items-center">
+      <div class="empty-cart-card text-center p-5 rounded">
+        <div class="empty-cart-icon mb-4">
+          <i class="fa-solid fa-cart-shopping fa-4x text-muted"></i>
+        </div>
+        <h3 class="mb-3">Your cart is empty</h3>
+        <p class="text-muted mb-4">Looks like you haven't added any products to your cart yet.</p>
+        <a href="product.html" class="btn btn-primary px-4 py-2">
+          <i class="fa-solid fa-bag-shopping me-2"></i>
+          Go to Products
+        </a>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="cart.js"></script>
+    <script type="module" src="../main.js"></script>
+</body>
+</html>
