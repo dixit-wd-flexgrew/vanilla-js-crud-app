@@ -3,8 +3,6 @@
 ## 📌 Overview
 This is a **vanilla JavaScript learning project** focused on building real-world logic for **users and products management** without any frameworks. The project demonstrates core JavaScript concepts such as:
 
-- Constructor functions & prototypes
-- `this`, `call`, and context handling
 - Modular JavaScript (ES Modules)
 - Filtering, searching, and CRUD-like operations
 - LocalStorage-based cart handling
